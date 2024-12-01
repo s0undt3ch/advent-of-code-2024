@@ -1,10 +1,12 @@
-package utils
+package filereader
 
 import (
 	"bufio"
 	"errors"
+	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 )
 
 type FileReader struct {
@@ -19,10 +21,19 @@ func New(path string) FileReader {
 	return FileReader{
 		Path:        path,
 		line:        -1,
-		hasMore:     false,
+		hasMore:     true,
 		readFile:    nil,
 		fileScanner: nil,
 	}
+}
+
+func NewFromDay(day int, input int) FileReader {
+	wd, err := os.Getwd()
+	if err != nil {
+		log.Fatalln(err)
+	}
+	filepath := filepath.Join(wd, "puzzles", fmt.Sprintf("day%d", day), fmt.Sprintf("input%d.txt", input))
+	return New(filepath)
 }
 
 func (fr *FileReader) ReadLines() ([]string, error) {
@@ -80,12 +91,8 @@ func (fr *FileReader) Read() (string, bool, error) {
 	return line, fr.hasMore, nil
 }
 
-func (fr *FileReader) HasMore() (bool, error) {
-	if fr.readFile == nil {
-		return false, errors.New("File not open")
-	}
-
-	return fr.hasMore, nil
+func (fr *FileReader) HasMore() (bool) {
+	return fr.hasMore
 }
 
 func (fr *FileReader) Close() {
