@@ -29,7 +29,6 @@ func part1() {
 		if err != nil {
 			log.Fatalln(err)
 		}
-        log.Println(line)
 
 		parts := strings.Split(line, "   ")
 		number1, err := strconv.Atoi(parts[0])
@@ -48,10 +47,10 @@ func part1() {
 	sort.Sort(sort.IntSlice(list2))
 
 	sumDiffs := 0
-	for i, l1 := range list1 {
-		l2 := list2[i]
+	for i, n1 := range list1 {
+		n2 := list2[i]
 
-		diff := math.Abs(float64(l1 - l2))
+		diff := math.Abs(float64(n1 - n2))
 		sumDiffs = sumDiffs + int(diff)
 	}
 
@@ -59,5 +58,45 @@ func part1() {
 }
 
 func part2() {
+	f := filereader.NewFromDay(1, 1)
 
+	list1 := []int{}
+	hist2 := map[int]int{}
+
+	for f.HasMore() {
+		line, _, err := f.Read()
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		parts := strings.Split(line, "   ")
+		number1, err := strconv.Atoi(parts[0])
+		if err != nil {
+			log.Fatalln(err)
+		}
+		number2, err := strconv.Atoi(parts[1])
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		list1 = append(list1, number1)
+
+		v, found := hist2[number2]
+		if !found {
+			v = 0
+		}
+		hist2[number2] = v + 1
+	}
+
+	score := 0
+	for _, n1 := range list1 {
+		v, found := hist2[n1]
+		if !found {
+			continue
+		}
+
+		score = score + n1*v
+	}
+
+	log.Println("The solution is:", score)
 }
