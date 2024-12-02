@@ -27,12 +27,21 @@ func New(path string) FileReader {
 	}
 }
 
-func NewFromDay(day int, input int) FileReader {
+func NewFromDayInput(day int, input int) FileReader {
 	wd, err := os.Getwd()
 	if err != nil {
 		log.Fatalln(err)
 	}
 	filepath := filepath.Join(wd, "puzzles", fmt.Sprintf("day%d", day), fmt.Sprintf("input%d.txt", input))
+	return New(filepath)
+}
+
+func NewFromDayExample(day int, input int) FileReader {
+	wd, err := os.Getwd()
+	if err != nil {
+		log.Fatalln(err)
+	}
+	filepath := filepath.Join(wd, "puzzles", fmt.Sprintf("day%d", day), fmt.Sprintf("example%d.txt", input))
 	return New(filepath)
 }
 

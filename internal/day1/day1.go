@@ -21,7 +21,7 @@ func Main() {
 }
 
 func part1() {
-	f := filereader.NewFromDay(1, 1)
+	f := filereader.NewFromDayInput(1, 1)
 	list1 := []int{}
 	list2 := []int{}
 	for f.HasMore() {
@@ -58,7 +58,7 @@ func part1() {
 }
 
 func part2() {
-	f := filereader.NewFromDay(1, 1)
+	f := filereader.NewFromDayInput(1, 1)
 
 	list1 := []int{}
 	hist2 := map[int]int{}
