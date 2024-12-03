@@ -6,9 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/afonsocraposo/advent-of-code-2024/internal/day1"
-	"github.com/afonsocraposo/advent-of-code-2024/internal/day2"
-	"github.com/afonsocraposo/advent-of-code-2024/internal/day3"
+	"github.com/s0undt3ch/advent-of-code-2024/internal/day1"
 )
 
 var days = map[int]func(){
@@ -21,6 +19,8 @@ func main() {
 	log.SetFlags(0)
 
 	fmt.Println("Advent of Code 2024")
+  fmt.Println("Initial repo skeleton - All credits go to Afonso Raposo")
+  fmt.Println("Also, this is my first stab at Go, as you might notice as you read through")
 
 	args := os.Args[1:]
 
