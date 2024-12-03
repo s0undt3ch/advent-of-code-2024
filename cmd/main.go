@@ -2,16 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/afonsocraposo/advent-of-code-2024/internal/day1"
-	"github.com/afonsocraposo/advent-of-code-2024/internal/day2"
 	"log"
 	"os"
 	"strconv"
+
+	"github.com/afonsocraposo/advent-of-code-2024/internal/day1"
+	"github.com/afonsocraposo/advent-of-code-2024/internal/day2"
+	"github.com/afonsocraposo/advent-of-code-2024/internal/day3"
 )
 
 var days = map[int]func(){
 	1: day1.Main,
 	2: day2.Main,
+	3: day3.Main,
 }
 
 func main() {
