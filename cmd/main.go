@@ -11,16 +11,14 @@ import (
 
 var days = map[int]func(){
 	1: day1.Main,
-	2: day2.Main,
-	3: day3.Main,
 }
 
 func main() {
 	log.SetFlags(0)
 
 	fmt.Println("Advent of Code 2024")
-  fmt.Println("Initial repo skeleton - All credits go to Afonso Raposo")
-  fmt.Println("Also, this is my first stab at Go, as you might notice as you read through")
+	fmt.Println("Initial repo skeleton - All credits go to Afonso Raposo")
+	fmt.Println("Also, this is my first stab at Go, as you might notice as you read through")
 
 	args := os.Args[1:]
 
