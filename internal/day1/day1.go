@@ -55,8 +55,8 @@ func part1() {
 	log.Println("Lines split, slices fed")
 
 	// Sort left
-	sort.Sort(sort.IntSlice(left))
-	sort.Sort(sort.IntSlice(right))
+	sort.Ints(left)
+	sort.Ints(right)
 
 	log.Println("Left:", left)
 	log.Println("Right:", right)
