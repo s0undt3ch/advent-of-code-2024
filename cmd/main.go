@@ -8,11 +8,13 @@ import (
 	"path/filepath"
 
 	"github.com/s0undt3ch/advent-of-code-2024/internal/day1"
+	"github.com/s0undt3ch/advent-of-code-2024/internal/day2"
 	newday "github.com/s0undt3ch/advent-of-code-2024/internal/utils/new-day"
 )
 
 var days = map[int]func(){
 	1: day1.Main,
+	2: day2.Main,
 }
 
 func main() {

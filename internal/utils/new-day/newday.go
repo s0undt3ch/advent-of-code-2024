@@ -32,7 +32,6 @@ func part1() {
 		log.Fatal(err)
 	}
 	log.Println("Lines:\n", lines)
-
 }
 
 func part2() {
@@ -43,7 +42,6 @@ func part2() {
 		log.Fatal(err)
 	}
 	log.Println("Lines:\n", lines)
-	
 }
 `
 
